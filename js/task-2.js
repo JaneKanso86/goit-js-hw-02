@@ -1,6 +1,8 @@
 function formatMessage(message, maxLength) {
-    const totalPrice = price + deliveryFee;
-    return `Shipping to ${country} will cost ${totalPrice} credits`;
+    if (maxLength >= message.length) {
+        return message;
+    }
+    return message.slice (0, maxLength) + "..."
 }
 
 console.log(formatMessage("Curabitur ligula sapien", 16)); // "Curabitur ligula..."
